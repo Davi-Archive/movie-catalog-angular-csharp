@@ -210,3 +210,4 @@ C:\Users\Machinery\Desktop\Git\FullCycle\backend\tests\Movie.Catalog\obj\Debug\n
 C:\Users\Machinery\Desktop\Git\FullCycle\backend\tests\Movie.Catalog\obj\Debug\net7.0\Movie.Catalog.UnitTests.pdb
 C:\Users\Machinery\Desktop\Git\FullCycle\backend\tests\Movie.Catalog\obj\Debug\net7.0\Movie.Catalog.UnitTests.genruntimeconfig.cache
 C:\Users\Machinery\Desktop\Git\FullCycle\backend\tests\Movie.Catalog\obj\Debug\net7.0\ref\Movie.Catalog.UnitTests.dll
+C:\Users\Machinery\Desktop\Git\FullCycle\backend\tests\Movie.Catalog\bin\Debug\net7.0\Bogus.dll

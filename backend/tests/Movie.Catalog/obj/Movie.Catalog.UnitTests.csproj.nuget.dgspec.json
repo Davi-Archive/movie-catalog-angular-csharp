@@ -169,6 +169,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.8.0, )"

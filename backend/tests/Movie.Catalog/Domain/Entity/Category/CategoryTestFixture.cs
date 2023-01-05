@@ -1,10 +1,14 @@
-﻿using Xunit;
-using DomainEntity = Movie.Catalog.Domain.Entity;
+﻿using Movie.Catalog.UnitTests.Common;
+using Xunit;
 namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 {
-    public class CategoryTestFixture
+    public class CategoryTestFixture : BaseFixture
     {
-        public Catalog.Domain.Entity.Category GetValidCategory() => new DomainEntity.Category("Category Name", "Category Description");
+        public CategoryTestFixture() : base() { }
+
+        public Catalog.Domain.Entity.Category GetValidCategory()
+            => new(Faker.Commerce.Categories(1)[0],
+                Faker.Commerce.ProductDescription());
     }
 
     [CollectionDefinition(nameof(CategoryTestFixture))]
