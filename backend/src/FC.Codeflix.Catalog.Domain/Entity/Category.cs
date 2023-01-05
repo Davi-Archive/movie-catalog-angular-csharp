@@ -35,6 +35,14 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             {
                 throw new EntityValidationException($"{nameof(Name)} should be at least 3 characters long");
             }
+            if (Name.Length > 255)
+            {
+                throw new EntityValidationException($"{nameof(Name)} should be less or equal 255 characters long");
+            }
+            if (Description.Length > 10000)
+            {
+                throw new EntityValidationException($"{nameof(Description)} should be less or equal 10.000 characters long");
+            }
         }
     }
 }

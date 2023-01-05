@@ -99,8 +99,6 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
 
 
         // nome deve ter no minimo 3 caracteres
-        // nome deve ter no minimo 255 caracteres
-        // descrição deve ter no minimo 10_000 caracteres
 
         [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
@@ -114,6 +112,34 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
                 () => new DomainEntity.Category(invalidName, "Category Description", true);
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Name should be at least 3 characters long", exception.Message);
+        }
+
+
+        // nome deve ter no minimo 255 caracteres
+
+        [Fact(DisplayName = nameof(InstantiateErrorWhenNameIsGreaterThan255Characters))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void InstantiateErrorWhenNameIsGreaterThan255Characters()
+        {
+            var invalidName = String.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());
+            Action action =
+                () => new DomainEntity.Category(invalidName, "Category Description", true);
+            var exception = Assert.Throws<EntityValidationException>(action);
+            Assert.Equal("Name should be less or equal 255 characters long", exception.Message);
+        }
+
+        // descrição deve ter no máximo 10_000 caracteres
+
+
+        [Fact(DisplayName = nameof(InstantiateErrorWhenDescriptionIsGreaterThan10_000Characters))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void InstantiateErrorWhenDescriptionIsGreaterThan10_000Characters()
+        {
+            var invalidDescription = String.Join(null, Enumerable.Range(0, 10001).Select(_ => "a").ToArray());
+            Action action =
+                () => new DomainEntity.Category("Invalid name", invalidDescription, true);
+            var exception = Assert.Throws<EntityValidationException>(action);
+            Assert.Equal("Description should be less or equal 10.000 characters long", exception.Message);
         }
     }
 }
