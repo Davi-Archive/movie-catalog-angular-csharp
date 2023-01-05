@@ -73,6 +73,7 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             if (String.IsNullOrWhiteSpace(name)) { throw new EntityValidationException($"{nameof(Name)} should not be empty or null."); }
             Name = name;
             Description = description ?? Description; // if binario
+            Validate();
         }
     }
 }
