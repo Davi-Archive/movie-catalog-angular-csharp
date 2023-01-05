@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {}
+    "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
+    "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj",
         "projectName": "Movie.Catalog.Domain",
-        "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj",
+        "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj",
         "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Machinery\\AppData\\Roaming\\NuGet\\NuGet.Config",

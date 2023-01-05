@@ -6290,8 +6290,8 @@
     },
     "Movie.Catalog.Domain/1.0.0": {
       "type": "project",
-      "path": "../../src/FC.Codeflix.Catalog.Domain/Movie.Catalog.Domain.csproj",
-      "msbuildProject": "../../src/FC.Codeflix.Catalog.Domain/Movie.Catalog.Domain.csproj"
+      "path": "../../src/Movie.Catalog.Domain/Movie.Catalog.Domain.csproj",
+      "msbuildProject": "../../src/Movie.Catalog.Domain/Movie.Catalog.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6311,11 +6311,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
       "projectName": "Movie.Catalog.UnitTests",
-      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
+      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
       "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\Movie.Catalog\\obj\\",
+      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\tests\\Movie.Catalog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Machinery\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6332,11 +6332,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
-              "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj"
-            },
-            "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
-              "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj"
+            "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
+              "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj"
             }
           }
         }

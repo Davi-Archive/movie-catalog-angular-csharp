@@ -128,10 +128,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
         [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
-        [InlineData("1")]
-        [InlineData("12")]
-        [InlineData("a")]
-        [InlineData("ab")]
+        [MemberData(nameof(GetNameWithLessThan3Characters), parameters: 10)]
         public void InstantiateErrorWhenNameIsLessThan3Characters(string invalidName)
         {
             var validCategory = _categoryTestFixture.GetValidCategory();
@@ -140,6 +137,17 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
                 () => new DomainEntity.Category(invalidName, validCategory.Description, true);
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Name should be at least 3 characters long", exception.Message);
+        }
+
+        public static IEnumerable<object[]> GetNameWithLessThan3Characters(int numberOfTests)
+        {
+            var fixture = new CategoryTestFixture();
+
+            for (int i = 0; i < numberOfTests; i++)
+            {
+                var isOdd = i % 2 == 1;
+                yield return new object[] { fixture.GetValidCategoryName()[..(isOdd ? 1 : 2)] };
+            }
         }
 
 
@@ -167,7 +175,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
         {
             var invalidDescription = string.Join(null, Enumerable.Range(0, 10001).Select(_ => "a").ToArray());
             Action action =
-                () => new DomainEntity.Category("Invalid name", invalidDescription, true);
+                () => new DomainEntity.Category(_categoryTestFixture.GetValidCategoryName(), invalidDescription, true);
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Description should be less or equal 10.000 characters long", exception.Message);
         }
@@ -179,8 +187,8 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             // Arrange
             var validData = new
             {
-                Name = "category name",
-                Description = "category description"
+                Name = _categoryTestFixture.GetValidCategoryName(),
+                Description = _categoryTestFixture.GetValidCategoryDescription()
             };
             var datetimeBefore = DateTime.Now;
             // Act
@@ -202,8 +210,8 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             // Arrange
             var validData = new
             {
-                Name = "category name",
-                Description = "category description"
+                Name = _categoryTestFixture.GetValidCategoryName(),
+                Description = _categoryTestFixture.GetValidCategoryDescription()
             };
             var datetimeBefore = DateTime.Now;
             // Act
@@ -225,11 +233,15 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             var validCategory = _categoryTestFixture.GetValidCategory();
 
             var category = new DomainEntity.Category(validCategory.Name, validCategory.Description);
-            var newValues = new { name = "New Name", Description = "New Description" };
+            var newValues = new
+            {
+                Name = _categoryTestFixture.GetValidCategoryName(),
+                Description = _categoryTestFixture.GetValidCategoryDescription()
+            };
 
-            category.Update(newValues.name, newValues.Description);
+            category.Update(newValues.Name, newValues.Description);
 
-            Assert.Equal(newValues.name, category.Name);
+            Assert.Equal(newValues.Name, category.Name);
             Assert.Equal(newValues.Description, category.Description);
         }
 
@@ -288,6 +300,9 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
             var invalidName = string.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());
             var category = _categoryTestFixture.GetValidCategory();
+
+            invalidName = _categoryTestFixture.Faker.Lorem.Letter(256);
+
 
             Action action = () => category.Update(invalidName);
             var exception = Assert.Throws<EntityValidationException>(action);

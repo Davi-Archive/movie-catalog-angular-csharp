@@ -1137,7 +1137,15 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.4.5": {}
+      "xunit.runner.visualstudio/2.4.5": {},
+      "Movie.Catalog.Domain/1.0.0": {
+        "dependencies": {
+          "FluentAssertions": "6.8.0"
+        },
+        "runtime": {
+          "Movie.Catalog.Domain.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -1817,6 +1825,11 @@
       "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
       "path": "xunit.runner.visualstudio/2.4.5",
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    },
+    "Movie.Catalog.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

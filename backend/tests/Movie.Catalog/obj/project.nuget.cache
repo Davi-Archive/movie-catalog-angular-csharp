@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DMNdvAcEVxqPRT5maE5PNudkPe/9dwzchYN7a/0zYMismYrJDiYmpGLnS9+Gml0ruyRKqR/7lImqeLKBWmPRBA==",
+  "dgSpecHash": "d+lrRGbQTVsu+RynFsykgPPq4KSZsSca0641by7D+Bmst1C0B0X8PMd6UUJr6SgWx/qbbmbczacpk18/N82Jyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Machinery\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Machinery\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
