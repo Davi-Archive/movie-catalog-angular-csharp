@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2A60668B-26D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2E2D8352-6698-477C-9552-0E3F48380952}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FC.Codeflix.Catalog.UnitTests", "tests\FC.Codeflix.Catalog\FC.Codeflix.Catalog.UnitTests.csproj", "{1B92193C-C79C-42DE-8CA2-624DC11A9BB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movie.Catalog.UnitTests", "tests\FC.Codeflix.Catalog\Movie.Catalog.UnitTests.csproj", "{1B92193C-C79C-42DE-8CA2-624DC11A9BB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC.Codeflix.Catalog.Domain", "src\FC.Codeflix.Catalog.Domain\FC.Codeflix.Catalog.Domain.csproj", "{7AAB3341-37A5-4593-8400-5200667BCC65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Catalog.Domain", "src\FC.Codeflix.Catalog.Domain\Movie.Catalog.Domain.csproj", "{7AAB3341-37A5-4593-8400-5200667BCC65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

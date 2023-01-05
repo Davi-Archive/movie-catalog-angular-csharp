@@ -156,9 +156,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj",
-      "projectName": "FC.Codeflix.Catalog.Domain",
-      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj",
+      "projectName": "Movie.Catalog.Domain",
+      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj",
       "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\obj\\",
       "projectStyle": "PackageReference",
