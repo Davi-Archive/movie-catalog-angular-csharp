@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3XOn3w+tRa84FurHDukeEByBJpLggCiKCXIN6wwPcwQ6BU7CDC1ruHYS0W6siZrzcbrvOvnmvq1HqwHZ37RjXA==",
+  "dgSpecHash": "ku7qIoJAFStamfGhOv5NrikxPEi/dXZvG2SHoDBhi3renr2LvVdO/guHcvzdjEWkBKYPiWgnS+FHhi5kFjHWhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
+  "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Machinery\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Machinery\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

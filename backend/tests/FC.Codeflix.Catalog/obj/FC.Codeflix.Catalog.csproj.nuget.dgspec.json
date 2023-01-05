@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj": {}
+    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj": {
+    "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
+        "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
         "projectName": "FC.Codeflix.Catalog",
-        "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
+        "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
         "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\obj\\",
+        "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Machinery\\AppData\\Roaming\\NuGet\\NuGet.Config",

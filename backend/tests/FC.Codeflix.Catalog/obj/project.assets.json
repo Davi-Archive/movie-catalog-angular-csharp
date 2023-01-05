@@ -1808,6 +1808,16 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "FC.Codeflix.Catalog.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/FC.Codeflix.Catalog.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FC.Codeflix.Catalog.Domain.dll": {}
+        }
       }
     }
   },
@@ -6103,10 +6113,16 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "FC.Codeflix.Catalog.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../src/FC.Codeflix.Catalog.Domain/FC.Codeflix.Catalog.Domain.csproj",
+      "msbuildProject": "../../src/FC.Codeflix.Catalog.Domain/FC.Codeflix.Catalog.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "FC.Codeflix.Catalog.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
@@ -6119,11 +6135,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
-      "projectName": "FC.Codeflix.Catalog",
-      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.csproj",
+      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.UnitTests.csproj",
+      "projectName": "FC.Codeflix.Catalog.UnitTests",
+      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\FC.Codeflix.Catalog.UnitTests.csproj",
       "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\FC.Codeflix.Catalog\\tests\\FC.Codeflix.Catalog\\obj\\",
+      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\tests\\FC.Codeflix.Catalog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Machinery\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6139,7 +6155,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj": {
+              "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\FC.Codeflix.Catalog.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
