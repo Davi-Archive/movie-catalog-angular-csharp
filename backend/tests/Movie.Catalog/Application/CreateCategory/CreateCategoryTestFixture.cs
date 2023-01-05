@@ -1,21 +1,24 @@
 ﻿using Moq;
 using Movie.Catalog.Application.Interfaces;
+using Movie.Catalog.Application.UseCases.Category.CreateCategory;
 using Movie.Catalog.Domain.Repository;
 using Movie.Catalog.UnitTests.Common;
 using Xunit;
-namespace Movie.Catalog.UnitTests.Domain.Entity.Category
-{
-    public class CategoryTestFixture : BaseFixture
-    {
-        public CategoryTestFixture() : base() { }
 
+namespace Movie.Catalog.UnitTests.Application.CreateCategory
+{
+    public class CreateCategoryTestFixtureCollection : ICollectionFixture<CreateCategoryTestFixture>
+    { }
+
+
+    public class CreateCategoryTestFixture : BaseFixture
+    {
         public string GetValidCategoryName()
         {
 
             var categoryName = "";
             while (categoryName.Length < 3)
                 categoryName = Faker.Commerce.Categories(1)[0];
-
             if (categoryName.Length > 255)
                 categoryName = categoryName[..255];
 
@@ -33,21 +36,20 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             return categoryDescription;
         }
 
+        public bool GetRandomBoolean()
+            => (new Random()).NextDouble() < 0.5;
 
 
-        public Catalog.Domain.Entity.Category GetValidCategory()
+        public CreateCategoryInput GetValidInput()
             => new(GetValidCategoryName(),
-               GetValidCategoryDescription());
+                GetValidCategoryDescription(),
+                GetRandomBoolean()
+                );
 
         public Mock<ICategoryRepository> GetRepositoryMock()
-            => new Mock<ICategoryRepository>();
+          => new();
 
         public Mock<IUnitOfWork> GetUnitOfWorkMock()
-            => new Mock<IUnitOfWork>();
-
+            => new();
     }
-
-    [CollectionDefinition(nameof(CategoryTestFixture))]
-    public class CategoryTestFixtureCollection : ICollectionFixture<CategoryTestFixture>
-    { };
 }
