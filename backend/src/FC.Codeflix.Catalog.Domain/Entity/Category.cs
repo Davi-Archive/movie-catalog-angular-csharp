@@ -27,6 +27,14 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             {
                 throw new EntityValidationException($"{nameof(Name)} should not be empty or null.");
             }
+            if (Description == null)
+            {
+                throw new EntityValidationException($"{nameof(Description)} should not be empty or null.");
+            }
+            if (Name.Length < 3)
+            {
+                throw new EntityValidationException($"{nameof(Name)} should be at least 3 characters long");
+            }
         }
     }
 }

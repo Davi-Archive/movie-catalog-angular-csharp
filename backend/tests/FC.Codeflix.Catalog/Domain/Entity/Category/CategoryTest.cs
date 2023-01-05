@@ -84,5 +84,36 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
             Assert.Equal("Name should not be empty or null.", exception.Message);
 
         }
+
+        [Theory(DisplayName = nameof(InstantiateErrorWhenDescriptionIsNull))]
+        [Trait("Domain", "Category - Aggregates")]
+        [InlineData(null)]
+        public void InstantiateErrorWhenDescriptionIsNull(string? description)
+        {
+            Action action = () => new DomainEntity.Category("Category Name", description, true).Validate();
+            var exception = Assert.ThrowsAny<EntityValidationException>(action);
+            Assert.Equal("Description should not be empty or null.", exception.Message);
+
+        }
+
+
+
+        // nome deve ter no minimo 3 caracteres
+        // nome deve ter no minimo 255 caracteres
+        // descrição deve ter no minimo 10_000 caracteres
+
+        [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
+        [Trait("Domain", "Category - Aggregates")]
+        [InlineData("1")]
+        [InlineData("12")]
+        [InlineData("a")]
+        [InlineData("ab")]
+        public void InstantiateErrorWhenNameIsLessThan3Characters(string invalidName)
+        {
+            Action action =
+                () => new DomainEntity.Category(invalidName, "Category Description", true);
+            var exception = Assert.Throws<EntityValidationException>(action);
+            Assert.Equal("Name should be at least 3 characters long", exception.Message);
+        }
     }
 }
