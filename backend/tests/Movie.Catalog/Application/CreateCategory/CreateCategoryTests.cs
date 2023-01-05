@@ -25,7 +25,7 @@ namespace Movie.Catalog.UnitTests.Application.CreateCategory
             var output = await useCase.Handle(input, CancellationToken.None);
 
             repositoryMock.Verify(repository =>
-              repository.Create(
+              repository.Insert(
                   It.IsAny<Category>(),
                   It.IsAny<CancellationToken>()
                   ), Times.Once
