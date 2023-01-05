@@ -1,7 +1,10 @@
-﻿using Moq;
+﻿using FluentAssertions;
+using Moq;
+using Movie.Catalog.Application.Interfaces;
 using Movie.Catalog.Domain.Entity;
+using Movie.Catalog.Domain.Repository;
 using Xunit;
-using UseCases = Movie.Catalog.Application.UseCases.CreateCategory;
+using UseCases = Movie.Catalog.Application.UseCases.Category.CreateCategory;
 namespace Movie.Catalog.UnitTests.Application.CreateCategory
 {
     public class CreateCategoryTests
@@ -12,12 +15,12 @@ namespace Movie.Catalog.UnitTests.Application.CreateCategory
         public async Task CreateCategoryAsync()
         {
             var repositoryMock = new Mock<ICategoryRepository>();
-            var unityOfWorkMock = new Mock<IunitOfWork>();
+            var unityOfWorkMock = new Mock<IUnitOfWork>();
             var useCase = new UseCases.CreateCategory(
                 repositoryMock.Object,
                 unityOfWorkMock.Object
                 );
-            var input = new CreateCategoryInput(
+            var input = new UseCases.CreateCategoryInput(
                 "Category Name",
                 "Category Description",
                 true
@@ -40,9 +43,8 @@ namespace Movie.Catalog.UnitTests.Application.CreateCategory
             output.Name.Should().Be("Category Name");
             output.Description.Should().Be("Category Description");
             output.IsActive.Should().Be(true);
-            (output.Id != null && output.Id != Guid.Empty).Should().BeTrue();
-            (output.CreatedAt != null && output.CreatedAt != default(DateTime))
-                .Should().BeTrue();
+            output.Id.Should().NotBeEmpty();
+            output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
 
         }
 

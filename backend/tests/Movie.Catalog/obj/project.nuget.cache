@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Emkn6dVApygOBqSFAcqKUdQJmuEe+ALKG0guFm3JAFtrG+qSK5l0kHdEr5FNlg8a9VBvT7q5SFo+kn21DTVy4A==",
+  "dgSpecHash": "4TGfudqVkzlpGGOzhUa2iALkc5tS8RZhohymr6sgj2OBnB8HR4B01v96E+j5kJ/FLk2oxOomivxyK+vT3TVPOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\tests\\Movie.Catalog\\Movie.Catalog.UnitTests.csproj",
   "expectedPackageFiles": [

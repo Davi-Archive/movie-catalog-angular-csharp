@@ -48,6 +48,19 @@
             "rid": "win"
           }
         }
+      },
+      "Movie.Catalog.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "FluentAssertions": "6.8.0"
+        },
+        "compile": {
+          "bin/placeholder/Movie.Catalog.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Movie.Catalog.Domain.dll": {}
+        }
       }
     }
   },
@@ -143,11 +156,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Movie.Catalog.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Movie.Catalog.Domain/Movie.Catalog.Domain.csproj",
+      "msbuildProject": "../Movie.Catalog.Domain/Movie.Catalog.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "FluentAssertions >= 6.8.0"
+      "Movie.Catalog.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -156,11 +174,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj",
-      "projectName": "Movie.Catalog.Domain",
-      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\Movie.Catalog.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Application\\Movie.Catalog.Application.csproj",
+      "projectName": "Movie.Catalog.Application",
+      "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Application\\Movie.Catalog.Application.csproj",
       "packagesPath": "C:\\Users\\Machinery\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\FC.Codeflix.Catalog.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Machinery\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,7 +194,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj": {
+              "projectPath": "C:\\Users\\Machinery\\Desktop\\Git\\movie-catalog-angular-csharp\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -188,12 +210,6 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
-        "dependencies": {
-          "FluentAssertions": {
-            "target": "Package",
-            "version": "[6.8.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

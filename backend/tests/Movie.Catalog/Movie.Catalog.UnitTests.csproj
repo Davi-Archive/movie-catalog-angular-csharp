@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Movie.Catalog.Application\Movie.Catalog.Application.csproj" />
     <ProjectReference Include="..\..\src\Movie.Catalog.Domain\Movie.Catalog.Domain.csproj" />
   </ItemGroup>
 

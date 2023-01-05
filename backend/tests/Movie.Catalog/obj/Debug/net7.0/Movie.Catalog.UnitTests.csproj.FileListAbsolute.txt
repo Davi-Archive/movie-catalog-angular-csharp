@@ -318,3 +318,10 @@ C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.
 C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\obj\Debug\net7.0\Movie.Catalog.UnitTests.csproj.CopyComplete
 C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\obj\Debug\net7.0\Movie.Catalog.UnitTests.genruntimeconfig.cache
 C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\obj\Debug\net7.0\ref\Movie.Catalog.UnitTests.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\Moq.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\Movie.Catalog.Application.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\tests\Movie.Catalog\bin\Debug\net7.0\Movie.Catalog.Application.pdb

@@ -1,0 +1,15 @@
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\bin\Debug\net7.0\Movie.Catalog.Application.deps.json
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\bin\Debug\net7.0\Movie.Catalog.Application.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\bin\Debug\net7.0\Movie.Catalog.Application.pdb
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\bin\Debug\net7.0\Movie.Catalog.Domain.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\bin\Debug\net7.0\Movie.Catalog.Domain.pdb
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.csproj.AssemblyReference.cache
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.AssemblyInfoInputs.cache
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.AssemblyInfo.cs
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.csproj.CoreCompileInputs.cache
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.csproj.CopyComplete
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\refint\Movie.Catalog.Application.dll
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\Movie.Catalog.Application.pdb
+C:\Users\Machinery\Desktop\Git\movie-catalog-angular-csharp\backend\src\Movie.Catalog.Application\obj\Debug\net7.0\ref\Movie.Catalog.Application.dll
