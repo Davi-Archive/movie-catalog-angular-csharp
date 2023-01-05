@@ -21,6 +21,17 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             Validate();
         }
 
+        public Category(string name, string description)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Description = description;
+            IsActive = true;
+            CreatedAt = DateTime.Now;
+
+            Validate();
+        }
+
         public void Activate()
         {
             IsActive = true;
@@ -55,6 +66,13 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             {
                 throw new EntityValidationException($"{nameof(Description)} should be less or equal 10.000 characters long");
             }
+        }
+
+        public void Update(string? name, string? description = null)
+        {
+            if (String.IsNullOrWhiteSpace(name)) { throw new EntityValidationException($"{nameof(Name)} should not be empty or null."); }
+            Name = name;
+            Description = description ?? Description; // if binario
         }
     }
 }
