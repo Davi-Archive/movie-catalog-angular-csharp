@@ -32,14 +32,18 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
 
         // not null or empty
 
-        [Fact(DisplayName = nameof(NotNull))]
+        [Fact(DisplayName = nameof(NotNullThrowWhenNull))]
         [Trait("Domain", "DomainValidation - Validation")]
-        public void NotNull()
+        public void NotNullThrowWhenNull()
         {
-            string? value = null;
-            Action action = () => DomainValidation.NotNull(value, "Value");
 
-            Assert.Throws<EntityValidationException>(action);
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
+            string? value = null;
+            Action action = () => DomainValidation.NotNull(value, fieldName);
+
+            var exception = Assert.Throws<EntityValidationException>(action);
+            action.Should().Throw<EntityValidationException>()
+                .WithMessage($"{fieldName} should not be null");
         }
 
 
@@ -51,12 +55,15 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         [InlineData(null)]
         public void NotNullOrEmptyThrowWhenEmpty(string? target)
         {
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
+
+
             Action action =
-                () => DomainValidation.NotNullOrEmpty(target, "fieldName");
+                () => DomainValidation.NotNullOrEmpty(target, fieldName);
 
 
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("fieldName should not be null or empty", exception.Message);
+            Assert.Equal($"{fieldName} should not be null or empty", exception.Message);
         }
 
         [Fact(DisplayName = nameof(NotNullOrEmptyOk))]
@@ -64,10 +71,10 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         public void NotNullOrEmptyOk()
         {
             var target = faker.Commerce.ProductName();
-
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
 
             Action action =
-                () => DomainValidation.NotNullOrEmpty(target, "fieldName");
+                () => DomainValidation.NotNullOrEmpty(target, fieldName);
 
 
             action.Should().NotThrow();
@@ -80,11 +87,13 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         [MemberData(nameof(GetValuesSmallerThanMin), parameters: 10)]
         public void MinLengthThrowWhenLess(string target, int minLength)
         {
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
+
             Action action =
-                () => DomainValidation.MinLength(target, minLength, "fieldName");
+                () => DomainValidation.MinLength(target, minLength, fieldName);
 
             action.Should().Throw<EntityValidationException>()
-                .WithMessage($"fieldName should not be less than {minLength} characters long");
+                .WithMessage($"{fieldName} should not be less than {minLength} characters long");
         }
 
         public static IEnumerable<object[]> GetValuesSmallerThanMin(int numberOfTests)
@@ -107,8 +116,10 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         [MemberData(nameof(GetValuesGreaterThanMin), parameters: 10)]
         public void MinLengthOk(string target, int minLength)
         {
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
+
             Action action =
-                () => DomainValidation.MinLength(target, minLength, "fieldName");
+                () => DomainValidation.MinLength(target, minLength, fieldName);
 
             action.Should().NotThrow();
         }
@@ -122,7 +133,7 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
             for (int i = 0; i < numberOfTests; i++)
             {
                 string example = faker.Commerce.ProductName();
-                var minLength = example.Length - (new Random()).Next(1, 5);
+                var minLength = example.Length - (new Random()).Next(0, 5);
                 yield return new object[] { example, minLength };
             }
         }
@@ -134,11 +145,13 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         [MemberData(nameof(GetValuesGreaterThanMax), parameters: 10)]
         public void maxLengthThrowWhenGreater(string target, int maxLength)
         {
+            string fieldName = faker.Commerce.ProductName().Replace(" ", "");
+
             Action action =
-                () => DomainValidation.MaxLength(target, maxLength, "fieldName");
+                () => DomainValidation.MaxLength(target, maxLength, fieldName);
 
             action.Should().Throw<EntityValidationException>()
-                .WithMessage($"fieldName should not be greater than {maxLength} characters long");
+                .WithMessage($"{fieldName} should not be greater than {maxLength} characters long");
         }
 
         public static IEnumerable<object[]> GetValuesGreaterThanMax(int numberOfTests)
