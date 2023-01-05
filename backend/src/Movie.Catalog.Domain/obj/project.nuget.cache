@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JUYKvDkR2AZ2fMRVOQsUMs4xdD3YSFWeXDmgv6ehi9dMk7I4nXrA97YgW+lA+2twc5qx2+eh9qIuYzzfhtD1+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Machinery\\Desktop\\Git\\FullCycle\\backend\\src\\Movie.Catalog.Domain\\Movie.Catalog.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Machinery\\.nuget\\packages\\fluentassertions\\6.8.0\\fluentassertions.6.8.0.nupkg.sha512",
+    "C:\\Users\\Machinery\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "C:\\Users\\Machinery\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
