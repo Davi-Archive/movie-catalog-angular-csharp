@@ -84,7 +84,7 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
                 () => DomainValidation.MinLength(target, minLength, "fieldName");
 
             action.Should().Throw<EntityValidationException>()
-                .WithMessage($"fieldName should not be less than {minLength} long");
+                .WithMessage($"fieldName should not be less than {minLength} characters long");
         }
 
         public static IEnumerable<object[]> GetValuesSmallerThanMin(int numberOfTests)
@@ -128,6 +128,32 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         }
 
         // max length
+
+        [Theory(DisplayName = nameof(MinLengthThrowWhenLess))]
+        [Trait("Domain", "DomainValidation - Validation")]
+        [MemberData(nameof(GetValuesGreaterThanMax), parameters: 10)]
+        public void maxLengthThrowWhenGreater(string target, int maxLength)
+        {
+            Action action =
+                () => DomainValidation.MaxLength(target, maxLength, "fieldName");
+
+            action.Should().Throw<EntityValidationException>()
+                .WithMessage($"fieldName should not be greater than {maxLength} characters long");
+        }
+
+        public static IEnumerable<object[]> GetValuesGreaterThanMax(int numberOfTests)
+        {
+            yield return new object[] { "123456", 5 };
+
+            var faker = new Faker();
+
+            for (int i = 0; i < (numberOfTests - 1); i++)
+            {
+                string example = faker.Commerce.ProductName();
+                var minLength = example.Length - (new Random()).Next(1, 5);
+                yield return new object[] { example, minLength };
+            }
+        }
 
     }
 }
