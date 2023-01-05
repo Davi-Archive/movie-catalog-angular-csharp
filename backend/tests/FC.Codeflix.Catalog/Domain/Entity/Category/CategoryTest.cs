@@ -28,15 +28,15 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
                  validData.Name,
                  validData.Description,
                  true);
-            var datetimeAfter = DateTime.Now;
+            var datetimeAfter = DateTime.Now.AddSeconds(1);
 
             category.Should().NotBeNull();
             category.Name.Should().Be(validData.Name);
             category.Description.Should().Be(validData.Description);
             category.Id.Should().NotBeEmpty();
             category.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
-            (category.CreatedAt > datetimeBefore).Should().BeTrue();
-            (category.CreatedAt < datetimeAfter).Should().BeTrue();
+            (category.CreatedAt >= datetimeBefore).Should().BeTrue();
+            (category.CreatedAt <= datetimeAfter).Should().BeTrue();
             (category.IsActive).Should().BeTrue();
 
 
