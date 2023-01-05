@@ -20,7 +20,8 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
             // Act
             var category = new DomainEntity.Category(
                  validData.Name,
-                 validData.Description);
+                 validData.Description,
+                 true);
             var datetimeAfter = DateTime.Now;
 
 
@@ -67,9 +68,7 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
             Assert.NotEqual(default(DateTime), category.CreatedAt);
             Assert.True(category.CreatedAt > datetimeBefore);
             Assert.True(category.CreatedAt < datetimeAfter);
-            Assert.True(category.IsActive);
             Assert.Equal(isActive, category.IsActive);
-
         }
     }
 }
