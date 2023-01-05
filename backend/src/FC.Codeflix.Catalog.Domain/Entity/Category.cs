@@ -21,6 +21,18 @@ namespace FC.Codeflix.Catalog.Domain.Entity
             Validate();
         }
 
+        public void Activate()
+        {
+            IsActive = true;
+            Validate();
+        }
+
+        public void Deactivate()
+        {
+            IsActive = false;
+            Validate();
+        }
+
         public void Validate()
         {
             if (String.IsNullOrWhiteSpace(Name))

@@ -141,5 +141,51 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Description should be less or equal 10.000 characters long", exception.Message);
         }
+
+        [Fact(DisplayName = nameof(Activate))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void Activate()
+        {
+            // Arrange
+            var validData = new
+            {
+                Name = "category name",
+                Description = "category description"
+            };
+            var datetimeBefore = DateTime.Now;
+            // Act
+            var category = new DomainEntity.Category(
+                 validData.Name,
+                 validData.Description,
+                 false);
+            var datetimeAfter = DateTime.Now;
+
+            category.Activate();
+
+            Assert.True(category.IsActive);
+        }
+
+        [Fact(DisplayName = nameof(Deactivate))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void Deactivate()
+        {
+            // Arrange
+            var validData = new
+            {
+                Name = "category name",
+                Description = "category description"
+            };
+            var datetimeBefore = DateTime.Now;
+            // Act
+            var category = new DomainEntity.Category(
+                 validData.Name,
+                 validData.Description,
+                 true);
+            var datetimeAfter = DateTime.Now;
+
+            category.Deactivate();
+
+            Assert.False(category.IsActive);
+        }
     }
 }
