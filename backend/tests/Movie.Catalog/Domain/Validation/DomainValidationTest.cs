@@ -9,14 +9,14 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
     public class DomainValidationTest
     {
 
-        public Faker Faker { get; set; } = new Faker();
+        public Faker faker { get; set; } = new Faker();
 
         // not null
         [Fact(DisplayName = nameof(NotNullOk))]
         [Trait("Domain", "DomainValidation - Validation")]
         public void NotNullOk()
         {
-            var value = Faker.Commerce.ProductName();
+            var value = faker.Commerce.ProductName();
             try
             {
                 Action action = () => DomainValidation.NotNull(value, "Value");
@@ -63,7 +63,7 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
         [Trait("Domain", "DomainValidation - Validation")]
         public void NotNullOrEmptyOk()
         {
-            var target = Faker.Commerce.ProductName();
+            var target = faker.Commerce.ProductName();
 
 
             Action action =
@@ -77,6 +77,7 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
 
         [Theory(DisplayName = nameof(MinLengthThrowWhenLess))]
         [Trait("Domain", "DomainValidation - Validation")]
+        [MemberData(nameof(GetValuesSmallerThanMin), parameters: 10)]
         public void MinLengthThrowWhenLess(string target, int minLength)
         {
             Action action =
@@ -86,7 +87,45 @@ namespace Movie.Catalog.UnitTests.Domain.Validation
                 .WithMessage($"fieldName should not be less than {minLength} long");
         }
 
-        public static IEnumerable<object[]> GetValuesSmallerThan { get; }
+        public static IEnumerable<object[]> GetValuesSmallerThanMin(int numberOfTests)
+        {
+            yield return new object[] { "123456", 10 };
+
+            var faker = new Faker();
+
+            for (int i = 0; i < numberOfTests; i++)
+            {
+                string example = faker.Commerce.ProductName();
+                var minLength = example.Length + (new Random()).Next(1, 20);
+                yield return new object[] { example, minLength };
+            }
+        }
+
+
+        [Theory(DisplayName = nameof(MinLengthThrowWhenLess))]
+        [Trait("Domain", "DomainValidation - Validation")]
+        [MemberData(nameof(GetValuesGreaterThanMin), parameters: 10)]
+        public void MinLengthOk(string target, int minLength)
+        {
+            Action action =
+                () => DomainValidation.MinLength(target, minLength, "fieldName");
+
+            action.Should().NotThrow();
+        }
+
+        public static IEnumerable<object[]> GetValuesGreaterThanMin(int numberOfTests)
+        {
+            yield return new object[] { "123456", 6 };
+
+            var faker = new Faker();
+
+            for (int i = 0; i < numberOfTests; i++)
+            {
+                string example = faker.Commerce.ProductName();
+                var minLength = example.Length - (new Random()).Next(1, 5);
+                yield return new object[] { example, minLength };
+            }
+        }
 
         // max length
 
