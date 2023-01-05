@@ -77,11 +77,11 @@ namespace FC.Codeflix.Catalog.UnitTests.Domain.Entity.Category
         [InlineData("")]
         [InlineData(null)]
         [InlineData("   ")]
-        public void InstantiateErrorWhenNameIsEmpty(string name)
+        public void InstantiateErrorWhenNameIsEmpty(string? name)
         {
-            Action action = () => new DomainEntity.Category(name, "Category Description");
-            var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Name should not be empty or null", exception.Message);
+            Action action = () => new DomainEntity.Category(name!, "Category Description", true).Validate();
+            var exception = Assert.ThrowsAny<EntityValidationException>(action);
+            Assert.Equal("Name should not be empty or null.", exception.Message);
 
         }
     }
