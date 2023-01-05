@@ -8,8 +8,6 @@ namespace Movie.Catalog.Domain.Validation
         {
             if (target is null)
                 throw new EntityValidationException($"{fieldName} should not be null");
-
-
         }
 
         public static void NotNullOrEmpty(string target, string fieldName)

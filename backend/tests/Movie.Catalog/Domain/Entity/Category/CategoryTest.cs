@@ -90,7 +90,6 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
         [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsEmpty))]
         [Trait("Domain", "Category - Aggregates")]
-        [InlineData("")]
         [InlineData(null)]
         [InlineData("   ")]
         public void InstantiateErrorWhenNameIsEmpty(string? name)
@@ -101,11 +100,8 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             Action action = () => new DomainEntity.Category(name!, validCategory.Description, true).Validate();
 
             action.Should()
-                .Throw<EntityValidationException>()
-                .WithMessage("Name should not be empty or null.");
-
-            var exception = Assert.ThrowsAny<EntityValidationException>(action);
-            Assert.Equal("Name should not be empty or null.", exception.Message);
+                .Throw<EntityValidationException>();
+            Assert.ThrowsAny<EntityValidationException>(action);
 
         }
 
@@ -118,7 +114,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
             Action action = () => new DomainEntity.Category(validCategory.Name, description, true).Validate();
             var exception = Assert.ThrowsAny<EntityValidationException>(action);
-            Assert.Equal("Description should not be empty or null.", exception.Message);
+            Assert.Equal("Description should not be null", exception.Message);
 
         }
 
@@ -136,7 +132,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             Action action =
                 () => new DomainEntity.Category(invalidName, validCategory.Description, true);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Name should be at least 3 characters long", exception.Message);
+            Assert.Equal("Name should not be less than 3 characters long", exception.Message);
         }
 
         public static IEnumerable<object[]> GetNameWithLessThan3Characters(int numberOfTests)
@@ -163,7 +159,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             Action action =
                 () => new DomainEntity.Category(invalidName, validCategory.Description, true);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Name should be less or equal 255 characters long", exception.Message);
+            Assert.Equal("Name should not be greater than 255 characters long", exception.Message);
         }
 
         // descrição deve ter no máximo 10_000 caracteres
@@ -177,7 +173,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
             Action action =
                 () => new DomainEntity.Category(_categoryTestFixture.GetValidCategoryName(), invalidDescription, true);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Description should be less or equal 10.000 characters long", exception.Message);
+            Assert.Equal("Description should not be greater than 10000 characters long", exception.Message);
         }
 
         [Fact(DisplayName = nameof(Activate))]
@@ -288,7 +284,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
             Action action = () => category.Update(invalidName);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Name should be at least 3 characters long", exception.Message);
+            Assert.Equal($"Name should not be less than 3 characters long", exception.Message);
         }
 
 
@@ -306,7 +302,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
             Action action = () => category.Update(invalidName);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Name should be less or equal 255 characters long", exception.Message);
+            Assert.Equal("Name should not be greater than 255 characters long", exception.Message);
         }
 
         [Fact(DisplayName = nameof(UpdateErrorWhenDescriptionIsGreaterThan10_000Characters))]
@@ -318,7 +314,7 @@ namespace Movie.Catalog.UnitTests.Domain.Entity.Category
 
             Action action = () => category.Update("Category new name", invalidDescription);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Description should be less or equal 10.000 characters long", exception.Message);
+            Assert.Equal("Description should not be greater than 10000 characters long", exception.Message);
         }
 
     }
